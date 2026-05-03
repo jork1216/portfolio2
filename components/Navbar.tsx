@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 // Breakpoints: mobile 0-500px, tablet 501-1024px, desktop 1025px+.
@@ -11,18 +13,26 @@ export default function Navbar() {
       {/* Desktop and mobile navbar shell */}
       <div className="navbar flex flex-wrap items-center justify-between gap-4 rounded-2xl border-4 border-black bg-white px-8 py-2 font-sans font-black uppercase shadow-[8px_8px_0_#000] max-[1024px]:px-5 max-[500px]:px-3">
         {/* Logo */}
-        <div className="rounded-lg border-3 border-black bg-pink-400 px-4 py-1 text-2xl leading-none">
-          dev.
+        <div className="h-11 w-24 overflow-hidden">
+          <Image
+            src="/mylogo.png"
+            alt="Site logo"
+            width={96}
+            height={40}
+            className="h-full w-full object-cover"
+            priority
+          />
         </div>
+
 
         {/* Desktop links */}
         <div className="flex flex-wrap items-center gap-16 text-base max-[1024px]:hidden">
           <section className="flex flex-wrap items-center gap-16 max-[1024px]:gap-8 max-[500px]:gap-4">
-            <div>HOME</div>
-            <div>SERVICES</div>
-            <div>PROJECTS</div>
-            <div>ABOUT</div>
-            <div>CONTACT</div>
+            <Link href="/">HOME</Link>
+            <Link href="/services">SERVICES</Link>
+            <Link href="/projects">PROJECTS</Link>
+            <Link href="/about">ABOUT</Link>
+            <Link href="/contact">CONTACT</Link>
           </section>
         </div>
 
@@ -52,53 +62,81 @@ export default function Navbar() {
 
           {/* Menu links */}
           <div className="mt-16 flex flex-col gap-3">
-            <button className="flex items-center justify-between rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]">
+            <Link
+              href="/"
+              onClick={() => setIsMenuOpen(false)}
+              className="flex items-center justify-between rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]"
+            >
               <span className="flex items-center gap-4">
                 <HomeIcon />
                 <span>HOME</span>
               </span>
               <ArrowIcon />
-            </button>
-            <button className="flex items-center justify-between rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]">
+            </Link>
+            <Link
+              href="#services"
+              onClick={() => setIsMenuOpen(false)}
+              className="flex items-center justify-between rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]"
+            >
               <span className="flex items-center gap-4">
                 <ServicesIcon />
                 <span>SERVICES</span>
               </span>
               <ArrowIcon />
-            </button>
-            <button className="flex items-center justify-between rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]">
+            </Link>
+            <Link
+              href="#projects"
+              onClick={() => setIsMenuOpen(false)}
+              className="flex items-center justify-between rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]"
+            >
               <span className="flex items-center gap-4">
                 <ProjectsIcon />
                 <span>PROJECTS</span>
               </span>
               <ArrowIcon />
-            </button>
-            <button className="flex items-center justify-between rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]">
+            </Link>
+            <Link
+              href="#about"
+              onClick={() => setIsMenuOpen(false)}
+              className="flex items-center justify-between rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]"
+            >
               <span className="flex items-center gap-4">
                 <AboutIcon />
                 <span>ABOUT</span>
               </span>
               <ArrowIcon />
-            </button>
-            <button className="flex items-center justify-between rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]">
+            </Link>
+            <Link
+              href="#contact"
+              onClick={() => setIsMenuOpen(false)}
+              className="flex items-center justify-between rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]"
+            >
               <span className="flex items-center gap-4">
                 <ContactIcon />
                 <span>CONTACT</span>
               </span>
               <ArrowIcon />
-            </button>
-            <button className="mt-2 flex items-center justify-center rounded-lg border-3 border-black bg-yellow-300 px-5 py-4 text-xl shadow-[4px_4px_0_#000]">
+            </Link>
+            <Link
+              href="#contact"
+              onClick={() => setIsMenuOpen(false)}
+              className="mt-2 flex items-center justify-center rounded-lg border-3 border-black bg-yellow-300 px-5 py-4 text-xl shadow-[4px_4px_0_#000]"
+            >
               <span className="flex items-center gap-4">
                 <PhoneIcon />
                 <span>BOOK A CALL</span>
               </span>
-            </button>
-            <button className="flex items-center justify-center rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]">
+            </Link>
+            <Link
+              href="#projects"
+              onClick={() => setIsMenuOpen(false)}
+              className="flex items-center justify-center rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]"
+            >
               <span className="flex items-center gap-4">
                 <EyeIcon />
                 <span>VIEW PROJECTS</span>
               </span>
-            </button>
+            </Link>
           </div>
         </div>
       )}
