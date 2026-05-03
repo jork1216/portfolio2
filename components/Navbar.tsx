@@ -74,7 +74,7 @@ export default function Navbar() {
               <ArrowIcon />
             </Link>
             <Link
-              href="#services"
+              href="/services"
               onClick={() => setIsMenuOpen(false)}
               className="flex items-center justify-between rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]"
             >
@@ -85,7 +85,7 @@ export default function Navbar() {
               <ArrowIcon />
             </Link>
             <Link
-              href="#projects"
+              href="/projects"
               onClick={() => setIsMenuOpen(false)}
               className="flex items-center justify-between rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]"
             >
@@ -107,7 +107,7 @@ export default function Navbar() {
               <ArrowIcon />
             </Link>
             <Link
-              href="#contact"
+              href="/contact"
               onClick={() => setIsMenuOpen(false)}
               className="flex items-center justify-between rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]"
             >
@@ -118,7 +118,7 @@ export default function Navbar() {
               <ArrowIcon />
             </Link>
             <Link
-              href="#contact"
+              href="/contact"
               onClick={() => setIsMenuOpen(false)}
               className="mt-2 flex items-center justify-center rounded-lg border-3 border-black bg-yellow-300 px-5 py-4 text-xl shadow-[4px_4px_0_#000]"
             >
@@ -128,7 +128,7 @@ export default function Navbar() {
               </span>
             </Link>
             <Link
-              href="#projects"
+              href="/projects"
               onClick={() => setIsMenuOpen(false)}
               className="flex items-center justify-center rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]"
             >
