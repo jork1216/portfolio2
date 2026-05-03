@@ -1,65 +1,49 @@
 import Image from "next/image";
+import Navbar from "@/components/Navbar";
 
+// Breakpoints: mobile 0-500px, tablet 501-1024px, desktop 1025px+.
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main>
+      <Navbar />
+
+      <section className="mx-6 mt-4 grid rounded-2xl border-4 border-black bg-white text-black shadow-[8px_8px_0_#000] min-[1025px]:grid-cols-2 max-[1024px]:mx-4 max-[500px]:mx-3">
+        <div className="px-10 py-8 font-sans max-[1024px]:px-8 max-[500px]:px-5">
+          <div className="mb-6 inline-block rounded-lg border-3 border-black bg-pink-400 px-5 py-2 text-2xl font-black uppercase shadow-[4px_4px_0_#000] max-[500px]:text-xl">
+            HI, I&apos;M A
+          </div>
+
+          <h1 className="text-7xl font-black uppercase leading-none [-webkit-text-stroke:2px_black] max-[1024px]:text-6xl max-[500px]:text-5xl">
+            WEB
+            <br />
+            DEVELOPER
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="mt-6 max-w-xl text-2xl font-bold leading-snug max-[1024px]:text-xl max-[500px]:text-lg">
+            I build reliable web services that help businesses grow, 
+            operate smoothly, and serve their customers better.
           </p>
+
+          <div className="mt-10 flex gap-8 max-[500px]:flex-col max-[500px]:gap-4">
+            <button className="rounded-lg border-3 border-black bg-pink-400 px-8 py-4 text-xl font-black uppercase shadow-[6px_6px_0_#000] max-[500px]:px-0 max-[500px]:py-4 max-[500px]:text-base">
+              VIEW PROJECTS
+            </button>
+            <button className="rounded-lg border-3 border-black bg-yellow-300 px-8 py-4 text-xl font-black uppercase shadow-[6px_6px_0_#000] max-[500px]:px-0 max-[500px]:py-4 max-[500px]:text-base">
+              BOOK A CALL
+            </button>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="relative overflow-hidden rounded-b-xl border-t-4 border-black bg-[#bdecfd] min-[1025px]:rounded-b-none min-[1025px]:rounded-r-xl min-[1025px]:border-l-4 min-[1025px]:border-t-0 max-[1024px]:min-h-[420px] max-[500px]:min-h-[320px]">
+          <Image
+            src="/me1.png"
+            alt="Web developer illustration"
+            fill
+            className="object-cover max-[500px]:object-[center_30%]"
+            priority
+          />
         </div>
-      </main>
-    </div>
-  );
+      </section>
+    </main>
+  )
 }
