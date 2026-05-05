@@ -21,36 +21,24 @@ const services = [
     color: "bg-yellow-300",
   },
   {
-    title: "Admin Dashboard",
-    description: "Data-rich dashboards that help you make better decisions.",
-    icon: "chart",
-    color: "bg-yellow-300",
-  },
-  {
     title: "Inventory System",
     description: "Track stock, manage products, and never run out again.",
     icon: "box",
     color: "bg-yellow-300",
   },
   {
-    title: "Form and Data Collection System",
-    description: "Collect, organize, and manage data with ease and accuracy.",
-    icon: "form",
-    color: "bg-pink-400",
-  },
-  {
     title: "Website Redesign",
     description: "Modern, fresh redesigns that improve UX and boost conversions.",
     icon: "brush",
-    color: "bg-[#bdecfd]",
+    color: "bg-pink-400",
   },
   {
     title: "Automation Services",
     description: "Automate repetitive tasks and focus on what truly matters.",
     icon: "gear",
-    color: "bg-yellow-300",
+    color: "bg-[#bdecfd]",
   },
-]
+] as const
 
 export default function Services() {
   return (
@@ -99,7 +87,7 @@ export default function Services() {
   )
 }
 
-function ServiceIcon({ name }: { name: string }) {
+function ServiceIcon({ name }: { name: (typeof services)[number]["icon"] }) {
   switch (name) {
     case "cart":
       return (
@@ -124,27 +112,11 @@ function ServiceIcon({ name }: { name: string }) {
           <path d="M16 28h3M23 28h3M30 28h3M16 34h3M23 34h3M30 34h3" stroke="black" strokeWidth="3" strokeLinecap="round" />
         </svg>
       )
-    case "chart":
-      return (
-        <svg aria-hidden="true" className="h-12 w-12" viewBox="0 0 48 48" fill="none">
-          <rect x="10" y="26" width="7" height="12" rx="1" fill="black" />
-          <rect x="21" y="18" width="7" height="20" rx="1" fill="black" />
-          <rect x="32" y="10" width="7" height="28" rx="1" fill="black" />
-        </svg>
-      )
     case "box":
       return (
         <svg aria-hidden="true" className="h-12 w-12" viewBox="0 0 48 48" fill="none">
           <path d="m24 7 16 9-16 9-16-9z" fill="white" stroke="black" strokeWidth="3" strokeLinejoin="round" />
           <path d="M8 16v17l16 8 16-8V16M24 25v16" stroke="black" strokeWidth="3" strokeLinejoin="round" />
-        </svg>
-      )
-    case "form":
-      return (
-        <svg aria-hidden="true" className="h-12 w-12" viewBox="0 0 48 48" fill="none">
-          <rect x="10" y="8" width="28" height="32" rx="3" fill="white" stroke="black" strokeWidth="3" />
-          <path d="M18 18h14M18 26h14M18 34h14" stroke="black" strokeWidth="3" strokeLinecap="round" />
-          <path d="M14 18h.1M14 26h.1M14 34h.1" stroke="black" strokeWidth="3" strokeLinecap="round" />
         </svg>
       )
     case "brush":
@@ -161,14 +133,6 @@ function ServiceIcon({ name }: { name: string }) {
         <svg aria-hidden="true" className="h-12 w-12" viewBox="0 0 48 48" fill="none">
           <path d="M31 7a10 10 0 0 0-11 13L8 32l8 8 12-12A10 10 0 0 0 41 17l-8 8-7-7z" fill="white" stroke="black" strokeWidth="3" strokeLinejoin="round" />
           <path d="M13 33 19 39" stroke="black" strokeWidth="3" strokeLinecap="round" />
-        </svg>
-      )
-    default:
-      return (
-        <svg aria-hidden="true" className="h-12 w-12" viewBox="0 0 48 48" fill="none">
-          <path d="M24 6v7M24 35v7M6 24h7M35 24h7M11 11l5 5M32 32l5 5M37 11l-5 5M16 32l-5 5" stroke="black" strokeWidth="3" strokeLinecap="round" />
-          <circle cx="24" cy="24" r="10" fill="black" />
-          <circle cx="24" cy="24" r="4" fill="white" />
         </svg>
       )
   }

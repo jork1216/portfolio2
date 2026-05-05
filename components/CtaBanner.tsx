@@ -69,7 +69,7 @@ function CtaFeature({
     <div className="flex items-center gap-4 px-4 py-2 max-[1024px]:px-4 max-[650px]:px-0 max-[650px]:py-4">
       {icon}
       <div>
-        <h3 className="text-base font-black leading-tight max-[500px]:text-lg">
+        <h3 className="text-lg font-black leading-tight max-[500px]:text-lg">
           {title}
         </h3>
         <p className="mt-1 text-xs font-bold leading-snug">{description}</p>

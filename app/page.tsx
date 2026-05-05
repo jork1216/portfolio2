@@ -59,7 +59,7 @@ export default function Home() {
 
 function PhoneIcon() {
   return (
-    <svg aria-hidden="true" className="h-8 w-8 max-[500px]:h-7 max-[500px]:w-7" viewBox="0 0 32 32" fill="none">
+    <svg aria-hidden="true" className="h-13 w-13 max-[500px]:h-8 max-[500px]:w-8" viewBox="0 0 32 32" fill="none">
       <path d="M10 5 6 9c1 9 8 16 17 17l4-4-5-5-3 3c-3-1-6-4-7-7l3-3z" fill="black" stroke="black" strokeWidth="2" strokeLinejoin="round" />
     </svg>
   )
@@ -67,7 +67,7 @@ function PhoneIcon() {
 
 function EyeIcon() {
   return (
-    <svg aria-hidden="true" className="h-8 w-8 max-[500px]:h-7 max-[500px]:w-7" viewBox="0 0 32 32" fill="none">
+    <svg aria-hidden="true" className="h-10 w-10 max-[500px]:h-8 max-[500px]:w-8" viewBox="0 0 32 32" fill="none">
       <path d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8S3 16 3 16Z" fill="white" stroke="black" strokeWidth="3" strokeLinejoin="round" />
       <circle cx="16" cy="16" r="4" fill="white" stroke="black" strokeWidth="3" />
     </svg>

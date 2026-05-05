@@ -26,7 +26,7 @@ export default function Navbar() {
 
 
         {/* Desktop links */}
-        <div className="flex flex-wrap items-center gap-16 text-base max-[1024px]:hidden">
+        <div className="flex flex-wrap items-center gap-16 text-lg max-[1024px]:hidden">
           <section className="flex flex-wrap items-center gap-16 max-[1024px]:gap-8 max-[500px]:gap-4">
             <Link href="/">HOME</Link>
             <Link href="/services">SERVICES</Link>
@@ -96,7 +96,7 @@ export default function Navbar() {
               <ArrowIcon />
             </Link>
             <Link
-              href="#about"
+              href="/about"
               onClick={() => setIsMenuOpen(false)}
               className="flex items-center justify-between rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]"
             >
