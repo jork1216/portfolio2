@@ -9,7 +9,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="navbar-container sticky top-0 z-50 w-full bg-[linear-gradient(to_bottom,#fff_0_50%,transparent_50%_100%)] px-6 py-1 text-black max-[1024px]:px-4 max-[500px]:px-3">
+    <nav className="navbar-container sticky top-0 z-50 w-full bg-[linear-gradient(to_bottom,#fde047_0_50%,transparent_50%_100%)] px-6 py-1 text-black max-[1024px]:px-4 max-[500px]:px-3">
       {/* Desktop and mobile navbar shell */}
       <div className="navbar flex flex-wrap items-center justify-between gap-4 rounded-2xl border-4 border-black bg-white px-8 py-2 font-sans font-black uppercase shadow-[8px_8px_0_#000] max-[1024px]:px-5 max-[500px]:px-3">
         {/* Logo */}

@@ -6,7 +6,7 @@ Use this file as the running visual guide for future website changes. Keep new s
 
 The website uses a bold, playful developer-portfolio look inspired by sticker, comic, and retro web UI:
 
-- White page background
+- Yellow page background on the homepage and services page
 - Strong black outlines
 - Chunky offset black shadows
 - Rounded bordered panels
@@ -20,26 +20,30 @@ The interface should feel clean, graphic, and confident. Avoid soft shadows, gla
 
 Core colors:
 
-- Page background: `white`
-- Main panels: `white`
-- Text: `black`
-- Borders: `black`
-- Shadow: `#000`
+- Global fallback page background: CSS `--background: #ffffff`
+- Home and services page background: Tailwind `bg-yellow-300` / `#fde047`
+- Main panels and menu items: Tailwind `bg-white` / `#ffffff`
+- SVG inner fills: `white` / `#ffffff`
+- Text: Tailwind `text-black` / `black` / `#000000`
+- Borders and SVG strokes: Tailwind `border-black` / `black` / `#000000`
+- Hard shadows: `#000`
+- Navbar top fade: `#fde047` to `transparent`
 
 Accent colors:
 
-- Primary pink: Tailwind `bg-pink-400` / `#f472b6`
-- Action yellow: Tailwind `bg-yellow-300` / `#fde047`
-- Light blue panel/menu: `#bdecfd`
-- Icon green: Tailwind `bg-green-300` / `#86efac`
-- Soft pink icon fill: Tailwind `bg-pink-300` / `#f9a8d4`
+- Primary pink: Tailwind `bg-pink-400` / SVG fill `#f472b6`
+- Action yellow: Tailwind `bg-yellow-300` / SVG fill `#fde047`
+- Light blue panel/menu/service accent: Tailwind arbitrary `bg-[#bdecfd]` / SVG fill `#bdecfd`
+- Friendly green icon accent: Tailwind `green-300` / SVG fill `#86efac`
+- Soft pink icon fill: Tailwind `pink-300` / SVG fill `#f9a8d4`
 
 Use accents intentionally:
 
 - Pink is the primary brand/action color.
-- Yellow is for secondary high-priority actions like `BOOK A CALL`.
+- Yellow is for page backgrounds and secondary high-priority actions like `BOOK A CALL`.
 - Blue works well for image panels, mobile menu backgrounds, and service/tech accents.
 - Green should stay occasional, mostly for friendly supporting icons.
+- Soft pink should stay limited to secondary icon fills.
 
 Avoid introducing many new colors. If a new color is needed, choose one bright, flat, high-contrast color that still works with black outlines.
 
@@ -189,6 +193,17 @@ Hero content:
 - Secondary CTA: yellow `BOOK A CALL`
 
 On desktop, keep the image on the right with a left border. On tablet/mobile, move the image below the text with a top border and a stable minimum height.
+
+## CTA Banner Pattern
+
+The services CTA banner is a compact call-to-action strip inspired by the same comic UI language:
+
+- Outer banner: `mx-6`, blue `#bdecfd` panel, `rounded-2xl`, `border-4 border-black`, `shadow-[8px_8px_0_#000]`
+- Left portrait block: uses `/me1.png`, clipped inside its own bordered media column
+- Main message: `Have a project in mind?` with bold supporting copy
+- CTA: white bordered `LET'S TALK` button with a black arrow icon
+- Feature row: three compact icon/text items for fast delivery, clean code, and client focus
+- On small screens, stack the portrait, message, CTA, and feature items so text stays readable.
 
 ## Icon Style
 

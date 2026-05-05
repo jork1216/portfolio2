@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 // Breakpoints: mobile 0-500px, tablet 501-1024px, desktop 1025px+.
 export default function Home() {
   return (
-    <main>
+    <main className="min-h-screen bg-yellow-300">
       <Navbar />
 
       <section className="mx-6 mt-4 grid rounded-2xl border-4 border-black bg-white text-black shadow-[8px_8px_0_#000] min-[1025px]:grid-cols-2 max-[1024px]:mx-4 max-[500px]:mx-3">

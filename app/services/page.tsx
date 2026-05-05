@@ -1,3 +1,4 @@
+import CtaBanner from "@/components/CtaBanner";
 import Navbar from "@/components/Navbar";
 
 const services = [
@@ -17,7 +18,7 @@ const services = [
     title: "Booking or Reservation System",
     description: "Smart booking systems that save time and avoid double bookings.",
     icon: "calendar",
-    color: "bg-[#86efac]",
+    color: "bg-yellow-300",
   },
   {
     title: "Admin Dashboard",
@@ -47,21 +48,27 @@ const services = [
     title: "Automation Services",
     description: "Automate repetitive tasks and focus on what truly matters.",
     icon: "gear",
-    color: "bg-[#86efac]",
+    color: "bg-yellow-300",
   },
 ]
 
 export default function Services() {
   return (
-    <main className="min-h-screen bg-white text-black">
+    <main className="min-h-screen bg-yellow-300 text-black">
       <Navbar />
 
-      <section className="mx-6 mt-4 rounded-2xl border-4 border-black bg-[#bdecfd] p-5 font-sans shadow-[8px_8px_0_#000] max-[1024px]:mx-4 max-[500px]:mx-3 max-[500px]:p-3">
+      <section className="mx-6 mt-4 rounded-2xl border-4 border-black bg-white p-5 font-sans shadow-[8px_8px_0_#000] max-[1024px]:mx-4 max-[500px]:mx-3 max-[500px]:p-3">
+        <h1 className="mb-6 text-6xl font-black leading-none max-[1024px]:text-4xl max-[500px]:mb-4 max-[500px]:text-3xl">
+          Services That Help
+          <br />
+          Your Business Grow
+        </h1>
+
         <div className="grid gap-5 min-[1025px]:grid-cols-3 max-[1024px]:grid-cols-2 max-[500px]:grid-cols-1">
           {services.map((service) => (
             <article
               key={service.title}
-              className="flex min-h-[235px] flex-col rounded-lg border-3 border-black bg-white p-5 shadow-[6px_6px_0_#000] max-[500px]:min-h-[220px]"
+              className="flex min-h-[235px] flex-col rounded-lg border-3 border-black bg-[#fff0f0] p-5 shadow-[6px_6px_0_#000] max-[500px]:min-h-[220px]"
             >
               <div className="flex items-start gap-4">
                 <div
@@ -86,6 +93,8 @@ export default function Services() {
           ))}
         </div>
       </section>
+
+      <CtaBanner />
     </main>
   )
 }
