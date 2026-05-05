@@ -68,7 +68,7 @@ export default function Services() {
           {services.map((service) => (
             <article
               key={service.title}
-              className="flex min-h-[235px] flex-col rounded-lg border-3 border-black bg-[#fff0f0] p-5 shadow-[6px_6px_0_#000] max-[500px]:min-h-[220px]"
+              className="flex min-h-[235px] flex-col rounded-lg border-3 border-black bg-[#fff0f0] p-5 shadow-[6px_6px_0_#000] transition-transform duration-200 hover:-translate-y-1 max-[500px]:min-h-[220px]"
             >
               <div className="flex items-start gap-4">
                 <div

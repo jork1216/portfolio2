@@ -29,8 +29,6 @@ export default function Projects() {
 
       <header className="mx-6 mt-4 grid gap-8 rounded-2xl border-4 border-black bg-white p-8 font-sans shadow-[8px_8px_0_#000] min-[1025px]:grid-cols-[1.1fr_1fr] max-[1024px]:mx-4 max-[1024px]:p-6 max-[500px]:mx-3 max-[500px]:p-4">
         <div>
-          
-
           <h1 className="text-7xl font-black uppercase leading-none max-[1024px]:text-6xl max-[500px]:text-5xl">
             Featured
             <br />
@@ -46,14 +44,14 @@ export default function Projects() {
           <div className="mt-8 flex flex-wrap gap-5 max-[500px]:flex-col">
             <a
               href="#project-showcase"
-              className="inline-flex items-center justify-center gap-3 rounded-lg border-3 border-black bg-yellow-300 px-6 py-3 text-base font-black uppercase shadow-[4px_4px_0_#000]"
+              className="inline-flex items-center justify-center gap-3 rounded-lg border-3 border-black bg-yellow-300 px-6 py-3 text-base font-black uppercase shadow-[4px_4px_0_#000] transition-transform duration-200 hover:-translate-y-1"
             >
               View All Projects
               <ArrowIcon />
             </a>
             <a
               href="/contact"
-              className="inline-flex items-center justify-center gap-3 rounded-lg border-3 border-black bg-white px-6 py-3 text-base font-black uppercase shadow-[4px_4px_0_#000]"
+              className="inline-flex items-center justify-center gap-3 rounded-lg border-3 border-black bg-pink-400 px-6 py-3 text-base font-black uppercase shadow-[4px_4px_0_#000] transition-transform duration-200 hover:-translate-y-1"
             >
               Let&apos;s Talk
               <ArrowIcon />
@@ -92,7 +90,7 @@ export default function Projects() {
 
 function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   return (
-    <article className="overflow-hidden rounded-xl border-4 border-black bg-white shadow-[7px_7px_0_#000]">
+    <article className="overflow-hidden rounded-xl border-4 border-black bg-white shadow-[7px_7px_0_#000] transition-transform duration-200 hover:-translate-y-1">
       <div className={`flex h-10 items-center border-b-4 border-black px-4 ${project.color}`}>
         <BrowserDots />
       </div>

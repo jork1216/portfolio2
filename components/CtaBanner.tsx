@@ -26,7 +26,7 @@ export default function CtaBanner() {
 
             <Link
               href="/contact"
-              className="mt-4 inline-flex items-center gap-3 rounded-lg border-3 border-black bg-white px-7 py-2 text-base font-black uppercase shadow-[4px_4px_0_#000] max-[500px]:w-full max-[500px]:justify-center"
+              className="mt-4 inline-flex items-center gap-3 rounded-lg border-3 border-black bg-white px-7 py-2 text-base font-black uppercase shadow-[4px_4px_0_#000] transition-transform duration-200 hover:-translate-y-1 max-[500px]:w-full max-[500px]:justify-center"
             >
               Let&apos;s Talk
               <ArrowIcon />

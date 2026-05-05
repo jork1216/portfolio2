@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 
 // Breakpoints: mobile 0-500px, tablet 501-1024px, desktop 1025px+.
 export default function Home() {
   return (
-    <main className="min-h-screen bg-yellow-300">
+    <main className="mb-10 min-h-screen bg-yellow-300">
       <Navbar />
 
       <section className="mx-6 mt-4 grid rounded-2xl border-4 border-black bg-white text-black shadow-[8px_8px_0_#000] min-[1025px]:grid-cols-2 max-[1024px]:mx-4 max-[500px]:mx-3">
@@ -25,12 +26,20 @@ export default function Home() {
           </p>
 
           <div className="mt-10 flex gap-8 max-[500px]:flex-col max-[500px]:gap-4">
-            <button className="rounded-lg border-3 border-black bg-pink-400 px-8 py-4 text-xl font-black uppercase shadow-[6px_6px_0_#000] max-[500px]:px-0 max-[500px]:py-4 max-[500px]:text-base">
-              VIEW PROJECTS
-            </button>
-            <button className="rounded-lg border-3 border-black bg-yellow-300 px-8 py-4 text-xl font-black uppercase shadow-[6px_6px_0_#000] max-[500px]:px-0 max-[500px]:py-4 max-[500px]:text-base">
-              BOOK A CALL
-            </button>
+            <Link
+              href="/projects"
+              className="inline-flex items-center justify-center gap-3 rounded-lg border-3 border-black bg-pink-400 px-8 py-4 text-xl font-black uppercase shadow-[6px_6px_0_#000] transition-transform duration-200 hover:-translate-y-1 max-[500px]:px-0 max-[500px]:py-4 max-[500px]:text-base"
+            >
+              <EyeIcon />
+              <span>VIEW PROJECTS</span>
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-3 rounded-lg border-3 border-black bg-yellow-300 px-8 py-4 text-xl font-black uppercase shadow-[6px_6px_0_#000] transition-transform duration-200 hover:-translate-y-1 max-[500px]:px-0 max-[500px]:py-4 max-[500px]:text-base"
+            >
+              <PhoneIcon />
+              <span>BOOK A CALL</span>
+            </Link>
           </div>
         </div>
 
@@ -45,5 +54,22 @@ export default function Home() {
         </div>
       </section>
     </main>
+  )
+}
+
+function PhoneIcon() {
+  return (
+    <svg aria-hidden="true" className="h-8 w-8 max-[500px]:h-7 max-[500px]:w-7" viewBox="0 0 32 32" fill="none">
+      <path d="M10 5 6 9c1 9 8 16 17 17l4-4-5-5-3 3c-3-1-6-4-7-7l3-3z" fill="black" stroke="black" strokeWidth="2" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function EyeIcon() {
+  return (
+    <svg aria-hidden="true" className="h-8 w-8 max-[500px]:h-7 max-[500px]:w-7" viewBox="0 0 32 32" fill="none">
+      <path d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8S3 16 3 16Z" fill="white" stroke="black" strokeWidth="3" strokeLinejoin="round" />
+      <circle cx="16" cy="16" r="4" fill="white" stroke="black" strokeWidth="3" />
+    </svg>
   )
 }
