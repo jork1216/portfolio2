@@ -1,3 +1,4 @@
+import ContactForm from "@/components/ContactForm";
 import Navbar from "@/components/Navbar";
 
 const contactItems = [
@@ -59,77 +60,7 @@ export default function Contact() {
             <div className="mt-2 h-3 w-full rounded-full bg-pink-400"></div>
           </div>
 
-          <form className="grid gap-5">
-            <label className="grid gap-2 text-xl font-black max-[500px]:text-lg">
-              Your Name
-              <input
-                type="text"
-                placeholder="Enter your name"
-                className="h-14 rounded-lg border-3 border-black bg-white px-5 text-lg font-bold outline-none placeholder:text-black/45"
-              />
-            </label>
-
-            <label className="grid gap-2 text-xl font-black max-[500px]:text-lg">
-              Email
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="h-14 rounded-lg border-3 border-black bg-white px-5 text-lg font-bold outline-none placeholder:text-black/45"
-              />
-            </label>
-
-            <div className="grid gap-5 min-[650px]:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-              <label className="grid min-w-0 gap-2 text-xl font-black max-[500px]:text-lg">
-                Project Type
-                <select
-                  defaultValue=""
-                  className="h-14 w-full min-w-0 rounded-lg border-3 border-black bg-white px-5 text-lg font-bold text-black/50 outline-none"
-                >
-                  <option value="" disabled>
-                    Select project type
-                  </option>
-                  <option>Ecommerce Website</option>
-                  <option>Business Website</option>
-                  <option>Booking or Reservation System</option>
-                  <option>Inventory System</option>
-                  <option>Website Redesign</option>
-                  <option>Automation Services</option>
-                  <option>Other</option>
-                </select>
-              </label>
-
-              <label className="grid min-w-0 gap-2 text-xl font-black max-[500px]:text-lg">
-                Budget
-                <select
-                  defaultValue=""
-                  className="h-14 w-full min-w-0 rounded-lg border-3 border-black bg-white px-5 text-lg font-bold text-black/50 outline-none"
-                >
-                  <option value="" disabled>
-                    Select budget
-                  </option>
-                  <option>&#8369;5,000 - &#8369;10,000</option>
-                  <option>&#8369;10,000 - &#8369;20,000</option>
-                  <option>&#8369;20,000+</option>
-                </select>
-              </label>
-            </div>
-
-            <label className="grid gap-2 text-xl font-black max-[500px]:text-lg">
-              Message
-              <textarea
-                placeholder="Tell me about your project..."
-                className="min-h-28 resize-y rounded-lg border-3 border-black bg-white px-5 py-4 text-lg font-bold outline-none placeholder:text-black/45"
-              />
-            </label>
-
-            <button
-              type="button"
-              className="mt-1 inline-flex items-center justify-center gap-4 rounded-lg border-3 border-black bg-pink-400 px-6 py-4 text-3xl font-black uppercase shadow-[6px_6px_0_#000] transition-transform duration-200 hover:-translate-y-1 max-[500px]:text-2xl"
-            >
-              <SendIcon />
-              Send Message
-            </button>
-          </form>
+          <ContactForm />
         </div>
 
         <div className="relative min-w-0 rounded-2xl border-4 border-black bg-[#bdecfd] p-7 shadow-[8px_8px_0_#000] max-[500px]:p-4">
@@ -215,15 +146,6 @@ function ClockIcon() {
     <svg aria-hidden="true" className="h-11 w-11" viewBox="0 0 44 44" fill="none">
       <circle cx="22" cy="22" r="16" fill="none" stroke="black" strokeWidth="4" />
       <path d="M22 11v12l8 5" stroke="black" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function SendIcon() {
-  return (
-    <svg aria-hidden="true" className="h-9 w-9" viewBox="0 0 36 36" fill="none">
-      <path d="M31 5 14 31l-3-12-10-4z" fill="none" stroke="black" strokeWidth="3" strokeLinejoin="round" />
-      <path d="m11 19 9-5" stroke="black" strokeWidth="3" strokeLinecap="round" />
     </svg>
   );
 }

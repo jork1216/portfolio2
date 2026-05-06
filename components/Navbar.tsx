@@ -2,10 +2,20 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 // Breakpoints: mobile 0-500px, tablet 501-1024px, desktop 1025px+.
+const navLinks = [
+  { href: "/", label: "HOME", icon: HomeIcon },
+  { href: "/services", label: "SERVICES", icon: ServicesIcon },
+  { href: "/projects", label: "PROJECTS", icon: ProjectsIcon },
+  { href: "/about", label: "ABOUT", icon: AboutIcon },
+  { href: "/contact", label: "CONTACT", icon: ContactIcon },
+];
+
 export default function Navbar() {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -28,11 +38,22 @@ export default function Navbar() {
         {/* Desktop links */}
         <div className="flex flex-wrap items-center gap-16 text-lg max-[1024px]:hidden">
           <section className="flex flex-wrap items-center gap-16 max-[1024px]:gap-8 max-[500px]:gap-4">
-            <Link href="/">HOME</Link>
-            <Link href="/services">SERVICES</Link>
-            <Link href="/projects">PROJECTS</Link>
-            <Link href="/about">ABOUT</Link>
-            <Link href="/contact">CONTACT</Link>
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`relative inline-flex pb-1 after:absolute after:bottom-0 after:left-0 after:h-1.5 after:w-full after:origin-left after:rounded-full after:bg-pink-400 after:transition-transform after:content-[''] ${
+                    isActive ? "after:scale-x-100" : "after:scale-x-0"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </section>
         </div>
 
@@ -62,61 +83,32 @@ export default function Navbar() {
 
           {/* Menu links */}
           <div className="mt-16 flex flex-col gap-3">
-            <Link
-              href="/"
-              onClick={() => setIsMenuOpen(false)}
-              className="flex items-center justify-between rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]"
-            >
-              <span className="flex items-center gap-4">
-                <HomeIcon />
-                <span>HOME</span>
-              </span>
-              <ArrowIcon />
-            </Link>
-            <Link
-              href="/services"
-              onClick={() => setIsMenuOpen(false)}
-              className="flex items-center justify-between rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]"
-            >
-              <span className="flex items-center gap-4">
-                <ServicesIcon />
-                <span>SERVICES</span>
-              </span>
-              <ArrowIcon />
-            </Link>
-            <Link
-              href="/projects"
-              onClick={() => setIsMenuOpen(false)}
-              className="flex items-center justify-between rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]"
-            >
-              <span className="flex items-center gap-4">
-                <ProjectsIcon />
-                <span>PROJECTS</span>
-              </span>
-              <ArrowIcon />
-            </Link>
-            <Link
-              href="/about"
-              onClick={() => setIsMenuOpen(false)}
-              className="flex items-center justify-between rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]"
-            >
-              <span className="flex items-center gap-4">
-                <AboutIcon />
-                <span>ABOUT</span>
-              </span>
-              <ArrowIcon />
-            </Link>
-            <Link
-              href="/contact"
-              onClick={() => setIsMenuOpen(false)}
-              className="flex items-center justify-between rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]"
-            >
-              <span className="flex items-center gap-4">
-                <ContactIcon />
-                <span>CONTACT</span>
-              </span>
-              <ArrowIcon />
-            </Link>
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              const Icon = link.icon;
+
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  aria-current={isActive ? "page" : undefined}
+                  className="flex items-center justify-between rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]"
+                >
+                  <span className="flex items-center gap-4">
+                    <Icon />
+                    <span
+                      className={`relative inline-flex pb-1 after:absolute after:bottom-0 after:left-0 after:h-1.5 after:w-full after:origin-left after:rounded-full after:bg-pink-400 after:transition-transform after:content-[''] ${
+                        isActive ? "after:scale-x-100" : "after:scale-x-0"
+                      }`}
+                    >
+                      {link.label}
+                    </span>
+                  </span>
+                  <ArrowIcon />
+                </Link>
+              );
+            })}
             <Link
               href="/contact"
               onClick={() => setIsMenuOpen(false)}
