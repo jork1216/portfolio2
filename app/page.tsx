@@ -8,8 +8,8 @@ export default function Home() {
     <main className="mb-10 min-h-screen bg-yellow-300">
       <Navbar />
 
-      <section className="mx-6 mt-4 grid rounded-2xl border-4 border-black bg-white text-black shadow-[8px_8px_0_#000] min-[1025px]:grid-cols-2 max-[1024px]:mx-4 max-[500px]:mx-3">
-        <div className="px-10 py-5 font-sans max-[1024px]:px-8 max-[500px]:px-5">
+      <section className="mx-6 mt-4 grid gap-8 rounded-2xl border-4 border-black bg-white p-8 text-black shadow-[8px_8px_0_#000] min-[1025px]:grid-cols-2 max-[1024px]:mx-4 max-[1024px]:p-6 max-[500px]:mx-3 max-[500px]:p-4">
+        <div className="font-sans">
           <div className="mb-6 inline-block rounded-lg border-3 border-black bg-pink-400 px-5 py-2 text-2xl font-black uppercase shadow-[4px_4px_0_#000] max-[500px]:text-xl">
             HI, I&apos;M A
           </div>
@@ -43,7 +43,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative overflow-hidden rounded-b-xl border-t-4 border-black bg-[#bdecfd] min-[1025px]:rounded-b-none min-[1025px]:rounded-r-xl min-[1025px]:border-l-4 min-[1025px]:border-t-0 max-[1024px]:min-h-[420px] max-[500px]:min-h-[320px]">
+        <div className="relative overflow-hidden rounded-xl border-4 border-black bg-[#bdecfd] max-[1024px]:min-h-[420px] max-[500px]:min-h-[320px]">
           <Image
             src="/me1.png"
             alt="Web developer illustration"

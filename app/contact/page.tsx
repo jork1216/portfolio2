@@ -48,11 +48,11 @@ const contactStats = [
 
 export default function Contact() {
   return (
-    <main className="mb-5 min-h-screen bg-yellow-300 text-black">
+    <main className="mb-10 min-h-screen bg-yellow-300 text-black">
       <Navbar />
 
       <section className="mx-6 mt-4 grid gap-6 font-sans max-[1024px]:mx-4 max-[500px]:mx-3 min-[1025px]:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
-        <div className="min-w-0 rounded-2xl border-4 border-black bg-white p-7 shadow-[8px_8px_0_#000] max-[500px]:p-4">
+        <div className="min-w-0 rounded-2xl border-4 border-black bg-white p-8 shadow-[8px_8px_0_#000] max-[1024px]:p-6 max-[500px]:p-4">
           <div className="mb-5 inline-block">
             <h1 className="text-3xl font-black uppercase max-[500px]:text-2xl">
               Send a Message
@@ -63,7 +63,7 @@ export default function Contact() {
           <ContactForm />
         </div>
 
-        <div className="relative min-w-0 rounded-2xl border-4 border-black bg-[#bdecfd] p-7 shadow-[8px_8px_0_#000] max-[500px]:p-4">
+        <div className="relative min-w-0 rounded-2xl border-4 border-black bg-[#bdecfd] p-8 shadow-[8px_8px_0_#000] max-[1024px]:p-6 max-[500px]:p-4">
           <h2 className="mb-5 inline-block rounded-lg border-3 border-black bg-black px-5 py-2 text-2xl font-black uppercase text-white max-[500px]:text-xl">
             Contact Information
           </h2>

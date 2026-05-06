@@ -1,17 +1,27 @@
 import CtaBanner from "@/components/CtaBanner";
 import Navbar from "@/components/Navbar";
+import ProjectSlideshow from "@/components/ProjectSlideshow";
 
-const projects = [
+type Project = {
+  title: string;
+  description: string;
+  tag: string;
+  color: string;
+  imageFolder?: string;
+};
+
+const projects: Project[] = [
   {
-    title: "Ecommerce Website",
-    description: "A conversion-focused storefront layout for products, collections, carts, and customer checkout flows.",
+    title: "TechHub PH",
+    description: "An ecommerce website where customers can view products, add items to their cart, and complete their order through a checkout page.",
     tag: "Online Store",
     color: "bg-pink-400",
+    imageFolder: "techhub",
   },
   {
     title: "Booking System",
     description: "A scheduling experience for reservations, availability, confirmations, and customer reminders.",
-    tag: "Automation",
+    tag: "Booking / Reservation System",
     color: "bg-[#bdecfd]",
   },
   {
@@ -59,11 +69,11 @@ export default function Projects() {
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-2xl border-4 border-black bg-white shadow-[8px_8px_0_#000]">
+        <div className="flex h-full flex-col overflow-hidden rounded-2xl border-4 border-black bg-white shadow-[8px_8px_0_#000]">
           <div className="flex h-12 items-center border-b-4 border-black bg-[#bdecfd] px-5">
             <BrowserDots />
           </div>
-         
+          <ProjectSlideshow priority />
         </div>
       </header>
 
@@ -76,7 +86,7 @@ export default function Projects() {
           <div className="h-1 flex-1 rounded-full bg-black" />
         </div>
 
-        <div className="grid gap-5 min-[1025px]:grid-cols-3 max-[1024px]:grid-cols-2 max-[650px]:grid-cols-1">
+        <div className="grid gap-5 min-[1025px]:grid-cols-2 max-[1024px]:grid-cols-2 max-[650px]:grid-cols-1">
           {projects.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}
@@ -88,24 +98,35 @@ export default function Projects() {
   )
 }
 
-function ProjectCard({ project }: { project: (typeof projects)[number] }) {
+function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="overflow-hidden rounded-xl border-4 border-black bg-white shadow-[7px_7px_0_#000] transition-transform duration-200 hover:-translate-y-1">
       <div className={`flex h-10 items-center border-b-4 border-black px-4 ${project.color}`}>
         <BrowserDots />
       </div>
 
-      <div className="p-4">
-        <div className="project-img mb-4 min-h-[185px] rounded-lg border-3 border-black bg-[#f7f7f2]" />
+      <div className="p-0">
+        {project.imageFolder ? (
+          <ProjectSlideshow
+            className="project-img relative mb-4 min-h-[400px] overflow-hidden border-b-4 border-black bg-[#f7f7f2]"
+            folder={project.imageFolder}
+            imageClassName="origin-top-left scale-[1]"
+            imagePositionClassName="object-left-top"
+            projectTitle={project.title}
+            sizes="(max-width: 650px) calc(100vw - 56px), (max-width: 1024px) calc((100vw - 88px) / 2), calc((100vw - 112px) / 3)"
+          />
+        ) : (
+          <div className="project-img relative mb-4 min-h-[400px] overflow-hidden border-b-4 border-black bg-[#f7f7f2]" />
+        )}
 
-        <h2 className="text-2xl font-black leading-tight max-[500px]:text-xl">
+        <h2 className="px-4 text-2xl font-black leading-tight max-[500px]:text-xl">
           {project.title}
         </h2>
-        <p className="mt-3 min-h-[88px] text-lg font-bold leading-snug max-[500px]:min-h-0 max-[500px]:text-base">
+        <p className="px-4 mt-3 min-h-[88px] text-lg font-bold leading-snug max-[500px]:min-h-0 max-[500px]:text-base">
           {project.description}
         </p>
 
-        <div className={`mt-5 inline-flex rounded-md border-3 border-black px-4 py-1 text-sm font-black ${project.color}`}>
+        <div className={`mx-4 mb-4 mt-5 inline-flex max-w-[calc(100%-2rem)] rounded-md border-3 border-black px-4 py-2 text-sm font-black leading-tight ${project.color}`}>
           {project.tag}
         </div>
       </div>

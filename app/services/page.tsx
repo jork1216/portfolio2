@@ -1,4 +1,3 @@
-import CtaBanner from "@/components/CtaBanner";
 import Navbar from "@/components/Navbar";
 
 const services = [
@@ -42,10 +41,10 @@ const services = [
 
 export default function Services() {
   return (
-    <main className="min-h-screen bg-yellow-300 text-black">
+    <main className="mb-10 min-h-screen bg-yellow-300 text-black">
       <Navbar />
 
-      <section className="mx-6 mt-4 rounded-2xl border-4 border-black bg-white p-5 font-sans shadow-[8px_8px_0_#000] max-[1024px]:mx-4 max-[500px]:mx-3 max-[500px]:p-3">
+      <section className="mx-6 mt-4 rounded-2xl border-4 border-black bg-white p-8 font-sans shadow-[8px_8px_0_#000] max-[1024px]:mx-4 max-[1024px]:p-6 max-[500px]:mx-3 max-[500px]:p-4">
         <h1 className="mb-6 text-6xl font-black leading-none max-[1024px]:text-4xl max-[500px]:mb-4 max-[500px]:text-3xl">
           Services That Help
           <br />
@@ -82,7 +81,6 @@ export default function Services() {
         </div>
       </section>
 
-      <CtaBanner />
     </main>
   )
 }

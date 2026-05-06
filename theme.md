@@ -6,7 +6,7 @@ Use this file as the running visual guide for future website changes. Keep new s
 
 The website uses a bold, playful developer-portfolio look inspired by sticker, comic, and retro web UI:
 
-- Yellow page background on the homepage and services page
+- Yellow page background on the homepage, services page, and projects page
 - Strong black outlines
 - Chunky offset black shadows
 - Rounded bordered panels
@@ -21,7 +21,7 @@ The interface should feel clean, graphic, and confident. Avoid soft shadows, gla
 Core colors:
 
 - Global fallback page background: CSS `--background: #ffffff`
-- Home and services page background: Tailwind `bg-yellow-300` / `#fde047`
+- Home, services, and projects page background: Tailwind `bg-yellow-300` / `#fde047`
 - Main panels and menu items: Tailwind `bg-white` / `#ffffff`
 - SVG inner fills: `white` / `#ffffff`
 - Text: Tailwind `text-black` / `black` / `#000000`
@@ -193,6 +193,46 @@ Hero content:
 - Secondary CTA: yellow `BOOK A CALL`
 
 On desktop, keep the image on the right with a left border. On tablet/mobile, move the image below the text with a top border and a stable minimum height.
+
+## Projects Page Pattern
+
+The projects page follows the same bold portfolio system with a white bordered hero panel and a project showcase panel.
+
+Projects hero:
+
+- Page background: yellow `bg-yellow-300`
+- Outer hero panel: white, `rounded-2xl`, `border-4 border-black`, `shadow-[8px_8px_0_#000]`
+- Desktop layout: two columns, text on the left and browser mockup on the right
+- Mobile/tablet layout: stacked with reduced horizontal padding
+- Heading: large uppercase `Featured Projects`
+- Accent underline: pink `bg-pink-400`
+- CTAs: yellow `View All Projects` and pink `Let's Talk`, both with black borders, hard shadows, uppercase labels, and arrow icons
+
+Browser mockups:
+
+- Outer frame: white, `rounded-2xl`, `border-4 border-black`, `overflow-hidden`, hard `8px` shadow
+- Top browser bar: `h-12`, blue `#bdecfd`, black bottom border, and three black circular dots
+- Media body should fill the remaining height when used in the hero mockup
+- Do not add an extra inner placeholder frame around the hero slideshow unless the user asks for one
+
+Project showcase:
+
+- Section panel: white, `rounded-2xl`, `border-4 border-black`, `shadow-[8px_8px_0_#000]`
+- Title chip: yellow, uppercase, black border, `4px` shadow
+- Cards: white browser-style cards with black borders, hard `7px` shadows, and slight hover lift
+- Card top bars use each project's accent color
+- Keep non-featured project image placeholders as light neutral blocks: `bg-[#f7f7f2]` with black border
+
+Slideshow behavior:
+
+- Use real screenshots from `public/projects/techhub` for the current Techhub/Ecommerce slideshow set
+- Fade between slides every `4000ms`
+- Loop back to the first image after the last slide
+- Use `next/image` with `fill`
+- Use `object-cover object-top` so screenshots crop from the top, not the center
+- The hero slideshow and project card slideshows should share the same slideshow component when possible
+- Project cards should use a data field such as `imageFolder` to opt into a slideshow instead of matching by title
+- Cards without an `imageFolder` keep static placeholders
 
 ## CTA Banner Pattern
 
