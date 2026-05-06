@@ -18,18 +18,6 @@ const projects: Project[] = [
     color: "bg-pink-400",
     imageFolder: "techhub",
   },
-  {
-    title: "Booking System",
-    description: "A scheduling experience for reservations, availability, confirmations, and customer reminders.",
-    tag: "Booking / Reservation System",
-    color: "bg-[#bdecfd]",
-  },
-  {
-    title: "Admin Dashboard",
-    description: "A data-focused workspace for monitoring activity, managing records, and making faster decisions.",
-    tag: "Operations",
-    color: "bg-yellow-300",
-  },
 ]
 
 export default function Projects() {
