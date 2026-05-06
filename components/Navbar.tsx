@@ -46,8 +46,10 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   aria-current={isActive ? "page" : undefined}
-                  className={`relative inline-flex pb-1 after:absolute after:bottom-0 after:left-0 after:h-1.5 after:w-full after:origin-left after:rounded-full after:bg-pink-400 after:transition-transform after:content-[''] ${
-                    isActive ? "after:scale-x-100" : "after:scale-x-0"
+                  className={`inline-flex rounded-lg border-3 px-3 py-1 transition-transform ${
+                    isActive
+                      ? "-translate-x-0.5 -translate-y-0.5 border-black bg-pink-400 shadow-[4px_4px_0_#000]"
+                      : "border-transparent bg-transparent shadow-none"
                   }`}
                 >
                   {link.label}
@@ -93,17 +95,13 @@ export default function Navbar() {
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
                   aria-current={isActive ? "page" : undefined}
-                  className="flex items-center justify-between rounded-lg border-3 border-black bg-white px-5 py-4 text-xl shadow-[4px_4px_0_#000]"
+                  className={`flex items-center justify-between rounded-lg border-3 border-black px-5 py-4 text-xl shadow-[4px_4px_0_#000] ${
+                    isActive ? "bg-pink-400" : "bg-white"
+                  }`}
                 >
                   <span className="flex items-center gap-4">
                     <Icon />
-                    <span
-                      className={`relative inline-flex pb-1 after:absolute after:bottom-0 after:left-0 after:h-1.5 after:w-full after:origin-left after:rounded-full after:bg-pink-400 after:transition-transform after:content-[''] ${
-                        isActive ? "after:scale-x-100" : "after:scale-x-0"
-                      }`}
-                    >
-                      {link.label}
-                    </span>
+                    <span>{link.label}</span>
                   </span>
                   <ArrowIcon />
                 </Link>
