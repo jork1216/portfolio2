@@ -29,7 +29,7 @@ const projects: Project[] = [
   {
     title: "TechHub PH",
     description: "An ecommerce website where customers can view products, add items to their cart, and complete their order through a checkout page.",
-    tag: "Online Store",
+    tag: "Ecommerce Website",
     color: "bg-pink-400",
     imageFolder: "techhub",
     imageFiles: getProjectImageFiles("techhub"),
@@ -37,7 +37,7 @@ const projects: Project[] = [
   {
     title: "FitBayan Gym",
     description: "A fitness website where members can explore gym programs, view membership options, check facilities, and contact the gym to start their fitness journey.",
-    tag: "Fitness Website",
+    tag: "Business Website",
     color: "bg-blue-400",
     imageFolder: "fitbayan",
     imageFiles: getProjectImageFiles("fitbayan"),
