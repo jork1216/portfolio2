@@ -63,7 +63,7 @@ export default function Projects() {
             solve real problems and deliver real results.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-5 max-[500px]:flex-col">
+          <div className="mt-8 flex flex-wrap gap-5 max-[500px]:hidden">
             <a
               href="#project-showcase"
               className="inline-flex items-center justify-center gap-3 rounded-lg border-3 border-black bg-yellow-300 px-6 py-3 text-base font-black uppercase shadow-[4px_4px_0_#000] transition-transform duration-200 hover:-translate-y-1"
@@ -81,7 +81,7 @@ export default function Projects() {
           </div>
         </div>
 
-        <div className="flex h-full flex-col overflow-hidden rounded-2xl border-4 border-black bg-white shadow-[8px_8px_0_#000]">
+        <div className="flex h-full flex-col overflow-hidden rounded-2xl border-4 border-black bg-white shadow-[8px_8px_0_#000] max-[500px]:hidden">
           <div className="flex h-12 items-center border-b-4 border-black bg-[#bdecfd] px-5">
             <BrowserDots />
           </div>
