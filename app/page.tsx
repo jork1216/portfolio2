@@ -48,8 +48,9 @@ export default function Home() {
             src="/me1.png"
             alt="Web developer illustration"
             fill
+            sizes="(max-width: 500px) calc(100vw - 56px), (max-width: 1024px) calc(100vw - 80px), calc((100vw - 112px) / 2)"
             className="object-cover max-[500px]:object-[center_30%]"
-            priority
+            loading="eager"
           />
         </div>
       </section>

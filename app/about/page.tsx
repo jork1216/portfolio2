@@ -58,8 +58,9 @@ export default function About() {
             src="/me1.png"
             alt="John Carlo Ramos"
             fill
+            sizes="(max-width: 500px) calc(100vw - 24px), (max-width: 1024px) calc(100vw - 32px), 52vw"
             className="object-cover object-[center_20%]"
-            priority
+            loading="eager"
           />
         </div>
       </section>

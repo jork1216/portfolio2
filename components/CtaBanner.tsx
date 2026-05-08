@@ -11,6 +11,7 @@ export default function CtaBanner() {
             src="/me1.png"
             alt="John Carlo Ramos"
             fill
+            sizes="(max-width: 650px) calc(100vw - 24px), (max-width: 1024px) 120px, 140px"
             className="object-cover object-[center_20%]"
           />
         </div>

@@ -1,14 +1,29 @@
 import CtaBanner from "@/components/CtaBanner";
 import Navbar from "@/components/Navbar";
 import ProjectSlideshow from "@/components/ProjectSlideshow";
+import { readdirSync } from "node:fs";
+import path from "node:path";
 
 type Project = {
   title: string;
   description: string;
   tag: string;
   color: string;
-  imageFolder?: string;
+  imageFolder: string;
+  imageFiles: string[];
 };
+
+const imageExtensions = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif", ".gif"]);
+
+function getProjectImageFiles(folder: string) {
+  const folderPath = path.join(process.cwd(), "public", "projects", folder);
+
+  return readdirSync(folderPath)
+    .filter((fileName) => imageExtensions.has(path.extname(fileName).toLowerCase()))
+    .sort((firstFile, secondFile) => firstFile.localeCompare(secondFile));
+}
+
+const featuredImageFiles = getProjectImageFiles("featured");
 
 const projects: Project[] = [
   {
@@ -17,6 +32,15 @@ const projects: Project[] = [
     tag: "Online Store",
     color: "bg-pink-400",
     imageFolder: "techhub",
+    imageFiles: getProjectImageFiles("techhub"),
+  },
+  {
+    title: "FitBayan Gym",
+    description: "A fitness website where members can explore gym programs, view membership options, check facilities, and contact the gym to start their fitness journey.",
+    tag: "Fitness Website",
+    color: "bg-blue-400",
+    imageFolder: "fitbayan",
+    imageFiles: getProjectImageFiles("fitbayan"),
   },
 ]
 
@@ -61,7 +85,12 @@ export default function Projects() {
           <div className="flex h-12 items-center border-b-4 border-black bg-[#bdecfd] px-5">
             <BrowserDots />
           </div>
-          <ProjectSlideshow priority />
+          <ProjectSlideshow
+            folder="featured"
+            imageFiles={featuredImageFiles}
+            priority
+            projectTitle="Featured project"
+          />
         </div>
       </header>
 
@@ -94,18 +123,15 @@ function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <div className="p-0">
-        {project.imageFolder ? (
-          <ProjectSlideshow
-            className="project-img relative mb-4 min-h-[400px] overflow-hidden border-b-4 border-black bg-[#f7f7f2]"
-            folder={project.imageFolder}
-            imageClassName="origin-top-left scale-[1]"
-            imagePositionClassName="object-left-top"
-            projectTitle={project.title}
-            sizes="(max-width: 650px) calc(100vw - 56px), (max-width: 1024px) calc((100vw - 88px) / 2), calc((100vw - 112px) / 3)"
-          />
-        ) : (
-          <div className="project-img relative mb-4 min-h-[400px] overflow-hidden border-b-4 border-black bg-[#f7f7f2]" />
-        )}
+        <ProjectSlideshow
+          className="project-img relative mb-4 min-h-[400px] overflow-hidden border-b-4 border-black bg-[#f7f7f2]"
+          folder={project.imageFolder}
+          imageFiles={project.imageFiles}
+          imageClassName="origin-top-left scale-[1]"
+          imagePositionClassName="object-left-top"
+          projectTitle={project.title}
+          sizes="(max-width: 650px) calc(100vw - 56px), (max-width: 1024px) calc((100vw - 88px) / 2), calc((100vw - 112px) / 3)"
+        />
 
         <h2 className="px-4 text-2xl font-black leading-tight max-[500px]:text-xl">
           {project.title}
