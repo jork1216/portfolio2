@@ -8,8 +8,19 @@ export default function Home() {
     <main className="mb-10 min-h-screen bg-yellow-300">
       <Navbar />
 
-      <section className="mx-6 mt-4 grid gap-8 rounded-2xl border-4 border-black bg-white p-8 text-black shadow-[8px_8px_0_#000] min-[1025px]:grid-cols-2 max-[1024px]:mx-4 max-[1024px]:p-6 max-[500px]:mx-3 max-[500px]:p-4">
-        <div className="font-sans">
+      <section
+        className="relative mx-6 mt-4 grid gap-8 overflow-hidden rounded-2xl border-4 border-black bg-white p-8 text-black shadow-[8px_8px_0_#000] min-[1025px]:grid-cols-2 max-[1024px]:mx-4 max-[1024px]:p-6 max-[500px]:mx-3 max-[500px]:p-4"
+      >
+        <Image
+          src="/download1.jpg"
+          alt=""
+          fill
+          sizes="(max-width: 500px) calc(100vw - 24px), (max-width: 1024px) calc(100vw - 32px), calc(100vw - 48px)"
+          className="z-0 object-cover min-[1025px]:rotate-90 min-[1025px]:scale-[2.4]"
+          loading="eager"
+        />
+
+        <div className="relative z-10 font-sans">
           <div className="mb-5 flex items-center gap-3">
             <div className="inline-flex -rotate-3 items-center gap-3 rounded-md border-4 border-black bg-pink-400 px-5 py-2 text-2xl font-black uppercase shadow-[5px_5px_0_#000] max-[500px]:text-xl">
               <span>HI, I&apos;M A</span>
@@ -50,7 +61,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative min-h-[500px] overflow-hidden rounded-2xl border-4 border-black bg-[#bdecfd] shadow-[8px_8px_0_#000] max-[1024px]:min-h-[420px] max-[500px]:min-h-[320px]">
+        <div className="relative z-10 min-h-[500px] overflow-hidden rounded-2xl border-4 border-black bg-[#bdecfd] shadow-[8px_8px_0_#000] max-[1024px]:min-h-[420px] max-[500px]:min-h-[320px]">
           <Image
             src="/me1.png"
             alt="Web developer illustration"
@@ -79,14 +90,6 @@ function EyeIcon() {
     <svg aria-hidden="true" className="h-10 w-10 shrink-0 max-[500px]:h-8 max-[500px]:w-8" viewBox="0 0 32 32" fill="none">
       <path d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8S3 16 3 16Z" fill="white" stroke="black" strokeWidth="3" strokeLinejoin="round" />
       <circle cx="16" cy="16" r="4" fill="white" stroke="black" strokeWidth="3" />
-    </svg>
-  )
-}
-
-function LightningIcon() {
-  return (
-    <svg aria-hidden="true" className="h-10 w-10 shrink-0 max-[500px]:h-8 max-[500px]:w-8" viewBox="0 0 32 32" fill="none">
-      <path d="M18 2 6 18h9l-2 12 13-17h-9z" fill="#fde047" stroke="black" strokeWidth="3" strokeLinejoin="round" />
     </svg>
   )
 }

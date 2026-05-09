@@ -48,9 +48,10 @@ export default function About() {
             <div className="mt-3 h-3 w-full max-w-[420px] rounded-full bg-pink-400" />
           </div>
 
-          <p className="max-w-2xl text-2xl font-bold leading-snug max-[1024px]:text-xl max-[500px]:text-lg">
-            I&apos;m John Carlo Ramos, a web developer from Lucena City who builds websites and web systems for businesses that need practical, reliable tools.
-          </p>
+          <p className="max-w-2xl text-xl font-bold leading-snug max-[1024px]:text-xl max-[500px]:text-lg">
+            My interest in technology started early and eventually led me to graduate as a 
+           Computer Engineer. Today, I work as a web developer helping small businesses build 
+           practical, reliable, and easy-to-use websites.          </p>
         </div>
 
         <div className="relative min-h-[460px] overflow-hidden border-black bg-[#bdecfd] max-[1024px]:min-h-[380px] max-[500px]:min-h-[300px] min-[1025px]:border-l-4 max-[1024px]:border-t-4">
@@ -65,36 +66,18 @@ export default function About() {
         </div>
       </section>
 
-      <section className="mx-6 mt-8 grid gap-6 font-sans max-[1024px]:mx-4 max-[500px]:mx-3 min-[1025px]:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
-        <article className="relative min-w-0 rounded-2xl border-4 border-black bg-white p-6 shadow-[8px_8px_0_#000] max-[500px]:p-4">
-          <h2 className="inline-flex rounded-md border-3 border-black bg-pink-400 px-5 py-2 text-2xl font-black uppercase shadow-[4px_4px_0_#000] max-[500px]:text-xl">
-            My Story
-          </h2>
+      
 
-          <p className="mt-7 text-xl font-bold leading-snug max-[500px]:text-lg">
-            I have been fond of computers since I was a kid. That curiosity
-            grew into a real interest in how technology works and how it can
-            help people solve everyday problems.
-          </p>
-
-          <p className="mt-5 text-xl font-bold leading-snug max-[500px]:text-lg">
-            I later graduated as a Computer Engineer, and now I work as a web
-            developer building websites and systems that are practical,
-            reliable, and easy to use.
-          </p>
-
-        </article>
-
-        <section className="min-w-0 rounded-2xl border-4 border-black bg-[#bdecfd] p-5 shadow-[8px_8px_0_#000] max-[500px]:p-4">
+        <section className="mx-6 mt-6 min-w-0 rounded-2xl border-4 border-black bg-[#bdecfd] p-5 shadow-[8px_8px_0_#000] max-[1024px]:mx-4 max-[500px]:mx-3 max-[500px]:p-4">
           <h2 className="inline-flex rounded-md border-3 border-black bg-black px-4 py-1 text-2xl font-black uppercase text-white max-[500px]:text-xl">
             How I Work
           </h2>
 
-          <div className="mt-5 grid gap-4 min-[700px]:grid-cols-2">
+          <div className="mt-5 grid grid-flow-col grid-cols-none gap-4 overflow-x-auto pb-2 min-[1025px]:grid-flow-row min-[1025px]:grid-cols-4">
             {workSteps.map((step) => (
               <article
                 key={step.title}
-                className="grid min-h-[245px] justify-items-center rounded-xl border-4 border-black bg-white p-4 text-center shadow-[6px_6px_0_#000]"
+                className="grid min-h-[245px] w-[260px] grid-rows-[80px_auto_1fr] justify-items-center gap-y-4 rounded-xl border-4 border-black bg-white p-4 text-center shadow-[6px_6px_0_#000] min-[1025px]:w-auto"
               >
                 <div
                   className={`grid h-20 w-20 place-items-center rounded-lg border-3 border-black ${step.color}`}
@@ -102,17 +85,17 @@ export default function About() {
                   <StepIcon name={step.icon} />
                 </div>
 
-                <h3 className="mt-4 text-xl font-black leading-tight">
+                <h3 className="text-xl font-black leading-tight">
                   {step.title}
                 </h3>
-                <p className="mt-3 text-base font-bold leading-snug">
+                <p className="text-base font-bold leading-snug">
                   {step.description}
                 </p>
               </article>
             ))}
           </div>
         </section>
-      </section>
+     
 
   
     </main>
