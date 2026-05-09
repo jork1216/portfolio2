@@ -42,18 +42,19 @@ export default function Navbar() {
               const isActive = pathname === link.href;
 
               return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  aria-current={isActive ? "page" : undefined}
-                  className={`inline-flex rounded-lg border-3 px-3 py-1 transition-transform ${
-                    isActive
-                      ? "-translate-x-0.5 -translate-y-0.5 border-black bg-pink-400 shadow-[4px_4px_0_#000]"
-                      : "border-transparent bg-transparent shadow-none"
-                  }`}
-                >
-                  {link.label}
-                </Link>
+                <span key={link.href} className="relative inline-flex">
+                  <Link
+                    href={link.href}
+                    aria-current={isActive ? "page" : undefined}
+                    className={`inline-flex rounded-lg border-3 px-3 py-1 transition-transform ${
+                      isActive
+                        ? "-translate-x-0.5 -translate-y-0.5 border-black bg-pink-400 shadow-[4px_4px_0_#000]"
+                        : "border-transparent bg-transparent shadow-none"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </span>
               );
             })}
           </section>
