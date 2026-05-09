@@ -18,11 +18,11 @@ export default function Home() {
             <LightningBurstIcon />
           </div>
 
-          <h1 className="flex flex-col items-start gap-2 text-7xl font-black uppercase leading-none tracking-normal max-[1024px]:text-6xl max-[500px]:text-5xl">
+          <h1 className="flex flex-col items-start gap-2 text-7xl font-black uppercase leading-none tracking-normal max-[1024px]:text-6xl max-[500px]:text-6xl max-[370px]:text-5xl">
             <span className="inline-block -rotate-2 border-4 border-black bg-yellow-300 px-5 py-2 shadow-[7px_7px_0_#000] [-webkit-text-stroke:2px_black] max-[500px]:px-3">
               WEB
             </span>
-            <span className="inline-block rotate-[-1deg] border-4 border-black bg-pink-400 px-5 py-2 shadow-[7px_7px_0_#000] [-webkit-text-stroke:2px_black] max-[500px]:px-3 max-[500px]:text-4xl">
+            <span className="inline-block rotate-[-1deg] border-4 border-black bg-pink-400 px-5 py-2 shadow-[7px_7px_0_#000] [-webkit-text-stroke:2px_black] max-[500px]:px-3 max-[500px]:text-5xl max-[370px]:text-4xl">
               DEVELOPER
             </span>
           </h1>
@@ -56,7 +56,7 @@ export default function Home() {
             alt="Web developer illustration"
             fill
             sizes="(max-width: 500px) calc(100vw - 56px), (max-width: 1024px) calc(100vw - 80px), calc((100vw - 112px) / 2)"
-            className="object-cover saturate-125 max-[500px]:object-[center_30%]"
+            className="object-cover contrast-105 saturate-130 max-[500px]:object-[center_30%]"
             loading="eager"
           />
           <span aria-hidden="true" className="pointer-events-none absolute inset-0 rounded-[0.75rem_0_0_0.75rem] border-b-4 border-l-4 border-t-4 border-white" />
